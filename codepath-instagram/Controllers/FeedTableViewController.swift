@@ -31,6 +31,7 @@ class FeedTableViewController: UITableViewController {
         let query = PFQuery(className: "posts")
         query.includeKey("author")
         query.limit = 20
+        query.order(byDescending: "_created_at")
         
         query.findObjectsInBackground { (data, error) in
             if (data != nil) {

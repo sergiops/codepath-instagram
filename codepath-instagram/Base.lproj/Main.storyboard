@@ -230,6 +230,7 @@
                             <constraint firstItem="II7-bc-e9W" firstAttribute="top" secondItem="f3K-sW-5oo" secondAttribute="top" constant="10" id="4A8-t5-4K3"/>
                             <constraint firstItem="bDu-27-Uhf" firstAttribute="top" secondItem="II7-bc-e9W" secondAttribute="bottom" constant="10" id="5MT-o3-zsU"/>
                             <constraint firstItem="elD-AH-Ada" firstAttribute="top" secondItem="f3K-sW-5oo" secondAttribute="top" constant="10" id="NdE-Bx-V8x"/>
+                            <constraint firstItem="elD-AH-Ada" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="II7-bc-e9W" secondAttribute="trailing" constant="15" id="Yfp-Lp-b3w"/>
                             <constraint firstItem="GUz-Da-ceF" firstAttribute="leading" secondItem="f3K-sW-5oo" secondAttribute="leading" constant="20" id="aeH-We-qJi"/>
                             <constraint firstItem="II7-bc-e9W" firstAttribute="leading" secondItem="f3K-sW-5oo" secondAttribute="leading" constant="20" id="ejV-Tb-CIl"/>
                             <constraint firstItem="GUz-Da-ceF" firstAttribute="top" secondItem="bDu-27-Uhf" secondAttribute="bottom" constant="10" id="fyG-f9-qah"/>
