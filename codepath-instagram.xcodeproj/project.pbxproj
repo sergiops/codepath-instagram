@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		39BC9DAB5DD28170BED6293B /* Pods_codepath_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF59CA6E00BD2686EDAF41E /* Pods_codepath_instagram.framework */; };
 		8A3EA790237CEBB900286742 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA78F237CEBB900286742 /* LoginViewController.swift */; };
-		8A3EA792237CEBC400286742 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA791237CEBC400286742 /* FeedViewController.swift */; };
+		8A3EA794237D349200286742 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA793237D349200286742 /* FeedTableViewController.swift */; };
+		8A3EA796237D352900286742 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA795237D352900286742 /* CameraViewController.swift */; };
 		8AA45171237CE81400C8903B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA45170237CE81400C8903B /* AppDelegate.swift */; };
 		8AA45173237CE81400C8903B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA45172237CE81400C8903B /* SceneDelegate.swift */; };
 		8AA45178237CE81400C8903B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA45176237CE81400C8903B /* Main.storyboard */; };
@@ -21,7 +22,8 @@
 		464E82D2770358F6CDC51294 /* Pods-codepath-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codepath-instagram.debug.xcconfig"; path = "Target Support Files/Pods-codepath-instagram/Pods-codepath-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		69059CF1379E2964D24F55FC /* Pods-codepath-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codepath-instagram.release.xcconfig"; path = "Target Support Files/Pods-codepath-instagram/Pods-codepath-instagram.release.xcconfig"; sourceTree = "<group>"; };
 		8A3EA78F237CEBB900286742 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8A3EA791237CEBC400286742 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		8A3EA793237D349200286742 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		8A3EA795237D352900286742 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8AA4516D237CE81400C8903B /* codepath-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "codepath-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA45170237CE81400C8903B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA45172237CE81400C8903B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				8A3EA78F237CEBB900286742 /* LoginViewController.swift */,
-				8A3EA791237CEBC400286742 /* FeedViewController.swift */,
+				8A3EA793237D349200286742 /* FeedTableViewController.swift */,
+				8A3EA795237D352900286742 /* CameraViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,9 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A3EA790237CEBB900286742 /* LoginViewController.swift in Sources */,
+				8A3EA796237D352900286742 /* CameraViewController.swift in Sources */,
 				8AA45171237CE81400C8903B /* AppDelegate.swift in Sources */,
-				8A3EA792237CEBC400286742 /* FeedViewController.swift in Sources */,
 				8AA45173237CE81400C8903B /* SceneDelegate.swift in Sources */,
+				8A3EA794237D349200286742 /* FeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
