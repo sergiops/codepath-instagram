@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="139" y="113"/>
         </scene>
-        <!--Feed Table View Controller-->
+        <!--Home-->
         <scene sceneID="bMb-U1-m9o">
             <objects>
                 <tableViewController id="8tH-Fe-KGA" customClass="FeedTableViewController" customModule="codepath_instagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJa-D5-vzl">
-                                            <rect key="frame" x="20" y="446.5" width="374" height="37.5"/>
+                                            <rect key="frame" x="20" y="446.5" width="374" height="29.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="PG4-dv-2SA" secondAttribute="trailing" id="RVq-Y7-iq4"/>
                                         <constraint firstItem="PG4-dv-2SA" firstAttribute="top" secondItem="d8d-4o-6wJ" secondAttribute="bottom" constant="8" id="VqR-pL-mH5"/>
                                         <constraint firstItem="d8d-4o-6wJ" firstAttribute="leading" secondItem="yAE-i3-IYq" secondAttribute="leading" id="aLo-iw-p7r"/>
-                                        <constraint firstAttribute="bottom" secondItem="tJa-D5-vzl" secondAttribute="bottom" constant="8" id="bi0-x4-avE"/>
+                                        <constraint firstAttribute="bottom" secondItem="tJa-D5-vzl" secondAttribute="bottom" constant="16" id="bi0-x4-avE"/>
                                         <constraint firstItem="d8d-4o-6wJ" firstAttribute="top" secondItem="yAE-i3-IYq" secondAttribute="top" id="kpr-Dv-wmc"/>
                                         <constraint firstAttribute="trailing" secondItem="d8d-4o-6wJ" secondAttribute="trailing" id="q6B-Mm-n1g"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="tJa-D5-vzl" secondAttribute="trailing" id="wlh-cW-GM6"/>
@@ -164,7 +164,7 @@
                             <outlet property="delegate" destination="8tH-Fe-KGA" id="fgh-Dg-Msv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="elH-Id-o0f">
+                    <navigationItem key="navigationItem" title="Home" id="elH-Id-o0f">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="QbZ-l2-5BG">
                             <connections>
                                 <segue destination="o9Q-RZ-9VG" kind="presentation" modalPresentationStyle="fullScreen" id="y4S-82-Ugm"/>
