@@ -64,7 +64,7 @@ UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let selectedImg = info[.editedImage] as! UIImage
-        let size = CGSize(width: 500, height: 500)
+        let size = CGSize(width: 300, height: 300)
         let scaledImage = selectedImg.af_imageScaled(to: size)
         imageView.image = scaledImage
         dismiss(animated: true, completion: nil)
