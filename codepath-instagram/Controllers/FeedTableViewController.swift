@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Parse
+import Alamofire
 
 class FeedTableViewController: UITableViewController {
+    
+    var posts = [PFObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,29 +22,52 @@ class FeedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        DataRequest.addAcceptableImageContentTypes(["application/octet-stream"])
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let query = PFQuery(className: "posts")
+        query.includeKey("author")
+        query.limit = 20
+        
+        query.findObjectsInBackground { (data, error) in
+            if (data != nil) {
+                self.posts = data!
+                self.tableView.reloadData()
+            } else {
+                print("Error: \(error?.localizedDescription ?? "No description")")
+            }
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
 
-        // Configure the cell...
-
+        let activePost = self.posts[indexPath.row]
+        let user = activePost["author"] as! PFUser
+        let imageFile = activePost["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let imageUrl = URL(string: urlString)!
+        
+        cell.authorLabel.text = user.username
+        cell.captionLabel.text = (activePost["caption"] as! String)
+        cell.photoView.af_setImage(withURL: imageUrl)
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

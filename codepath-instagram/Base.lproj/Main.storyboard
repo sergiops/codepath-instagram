@@ -111,6 +111,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTableViewCell" rowHeight="492" id="TNk-zh-Doh" customClass="FeedTableViewCell" customModule="codepath_instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="492"/>
@@ -151,6 +152,11 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="tJa-D5-vzl" secondAttribute="trailing" id="wlh-cW-GM6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorLabel" destination="PG4-dv-2SA" id="ZWo-My-Q24"/>
+                                    <outlet property="captionLabel" destination="tJa-D5-vzl" id="VeA-zy-lPH"/>
+                                    <outlet property="photoView" destination="d8d-4o-6wJ" id="tRr-6R-5eh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
