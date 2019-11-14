@@ -30,12 +30,17 @@ UINavigationControllerDelegate {
     
     @IBAction func onShare(_ sender: Any) {
         let post = PFObject(className: "posts")
-        post["caption"] = captionField.text!
+        let imageData = imageView.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        
         post["author"] = PFUser.current()!
+        post["caption"] = captionField.text!
+        post["image"] = file
         
         post.saveInBackground { (success, error) in
             if success {
                 print("Post saved!")
+                self.dismiss(animated: true, completion: nil)
             } else {
                 print("Error: \(error?.localizedDescription ?? "No description")")
             }
