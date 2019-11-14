@@ -11,6 +11,7 @@
 		8A3EA790237CEBB900286742 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA78F237CEBB900286742 /* LoginViewController.swift */; };
 		8A3EA794237D349200286742 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA793237D349200286742 /* FeedTableViewController.swift */; };
 		8A3EA796237D352900286742 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA795237D352900286742 /* CameraViewController.swift */; };
+		8A3EA798237D48C200286742 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3EA797237D48C200286742 /* FeedTableViewCell.swift */; };
 		8AA45171237CE81400C8903B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA45170237CE81400C8903B /* AppDelegate.swift */; };
 		8AA45173237CE81400C8903B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA45172237CE81400C8903B /* SceneDelegate.swift */; };
 		8AA45178237CE81400C8903B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA45176237CE81400C8903B /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		8A3EA78F237CEBB900286742 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8A3EA793237D349200286742 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		8A3EA795237D352900286742 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		8A3EA797237D48C200286742 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		8AA4516D237CE81400C8903B /* codepath-instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "codepath-instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA45170237CE81400C8903B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AA45172237CE81400C8903B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		8A3EA78D237CEB3D00286742 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A3EA797237D48C200286742 /* FeedTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A3EA790237CEBB900286742 /* LoginViewController.swift in Sources */,
+				8A3EA798237D48C200286742 /* FeedTableViewCell.swift in Sources */,
 				8A3EA796237D352900286742 /* CameraViewController.swift in Sources */,
 				8AA45171237CE81400C8903B /* AppDelegate.swift in Sources */,
 				8AA45173237CE81400C8903B /* SceneDelegate.swift in Sources */,
