@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="codepath_instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="codepath_instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,6 +165,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="elH-Id-o0f">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="CAq-ot-jO1">
+                            <connections>
+                                <action selector="onLogout:" destination="8tH-Fe-KGA" id="qx8-ms-1PU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="QbZ-l2-5BG">
                             <connections>
                                 <segue destination="o9Q-RZ-9VG" kind="presentation" modalPresentationStyle="fullScreen" id="y4S-82-Ugm"/>
@@ -257,7 +262,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6qI-TY-TJP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FbU-KW-Bfh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavController" automaticallyAdjustsScrollViewInsets="NO" id="FbU-KW-Bfh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WvQ-h1-Kve"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EeY-Ki-GZL">

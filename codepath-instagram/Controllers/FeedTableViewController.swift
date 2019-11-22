@@ -42,7 +42,16 @@ class FeedTableViewController: UITableViewController {
             }
         }
     }
-
+    
+    // MARK: - Feed Actions
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        delegate.window?.rootViewController = loginViewController
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

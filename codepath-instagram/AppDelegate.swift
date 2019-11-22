@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://blooming-dusk-50485.herokuapp.com/parse"
             })
         )
+        
         return true
     }
 
