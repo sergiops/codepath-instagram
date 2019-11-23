@@ -14,6 +14,8 @@ import MessageInputBar
 class FeedTableViewController: UITableViewController, MessageInputBarDelegate {
     
     var posts = [PFObject]()
+    var selectedPost: PFObject!
+    
     let commentBar = MessageInputBar()
     var isCommentBarVisible = false
     
@@ -82,7 +84,20 @@ class FeedTableViewController: UITableViewController, MessageInputBarDelegate {
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         // Create the comment
+        let comment = PFObject(className: "Comments")
+        comment["text"] = text
+        comment["post"] = selectedPost
+        comment["author"] = PFUser.current()!
         
+        selectedPost.add(comment, forKey: "comments")
+        selectedPost.saveInBackground { (success, error) in
+            if success {
+                print("Comment saved!")
+            } else {
+                print("Error saving comment.")
+            }
+        }
+        tableView.reloadData()
         
         // Clear and dismiss the input bar
         commentBar.inputTextView.text = nil
@@ -142,6 +157,7 @@ class FeedTableViewController: UITableViewController, MessageInputBarDelegate {
             isCommentBarVisible = true
             becomeFirstResponder()
             commentBar.inputTextView.becomeFirstResponder()
+            selectedPost = activePost
         }
     }
 
