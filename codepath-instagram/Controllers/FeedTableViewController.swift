@@ -29,7 +29,7 @@ class FeedTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         let query = PFQuery(className: "posts")
-        query.includeKey("author")
+        query.includeKeys(["author", "comments", "comments.author"])
         query.limit = 20
         query.order(byDescending: "_created_at")
         
@@ -56,27 +56,40 @@ class FeedTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return posts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return posts.count
+        let activePost = posts[section]
+        let comments = (activePost["comments"] as? [PFObject]) ?? []
+        return comments.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
-
-        let activePost = self.posts[indexPath.row]
-        let user = activePost["author"] as! PFUser
-        let imageFile = activePost["image"] as! PFFileObject
-        let urlString = imageFile.url!
-        let imageUrl = URL(string: urlString)!
+        let activePost = posts[indexPath.section]
+        let comments = (activePost["comments"] as? [PFObject]) ?? []
         
-        cell.authorLabel.text = user.username
-        cell.captionLabel.text = (activePost["caption"] as! String)
-        cell.photoView.af_setImage(withURL: imageUrl)
-        return cell
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
+
+            let user = activePost["author"] as! PFUser
+            let imageFile = activePost["image"] as! PFFileObject
+            let urlString = imageFile.url!
+            let imageUrl = URL(string: urlString)!
+            
+            cell.authorLabel.text = user.username
+            cell.captionLabel.text = (activePost["caption"] as! String)
+            cell.photoView.af_setImage(withURL: imageUrl)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell") as! CommentTableViewCell
+            let activeComment = comments[indexPath.row - 1]
+            let user = activeComment["author"] as! PFUser
+            cell.nameLabel.text = user.username
+            cell.commentLabel.text = (activeComment["text"] as! String)
+            return cell
+        }
     }
 
     /*

@@ -113,7 +113,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedTableViewCell" rowHeight="492" id="TNk-zh-Doh" customClass="FeedTableViewCell" customModule="codepath_instagram" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedTableViewCell" rowHeight="492" id="TNk-zh-Doh" customClass="FeedTableViewCell" customModule="codepath_instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="492"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TNk-zh-Doh" id="yAE-i3-IYq">
@@ -156,6 +156,39 @@
                                     <outlet property="authorLabel" destination="PG4-dv-2SA" id="ZWo-My-Q24"/>
                                     <outlet property="captionLabel" destination="tJa-D5-vzl" id="VeA-zy-lPH"/>
                                     <outlet property="photoView" destination="d8d-4o-6wJ" id="tRr-6R-5eh"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentTableViewCell" id="fEy-IA-lHD" customClass="CommentTableViewCell" customModule="codepath_instagram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="520" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fEy-IA-lHD" id="FF8-56-z7L">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khf-dN-0iS">
+                                            <rect key="frame" x="20" y="11" width="57" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UT5-V1-XQX">
+                                            <rect key="frame" x="81" y="12" width="313" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="khf-dN-0iS" firstAttribute="leading" secondItem="FF8-56-z7L" secondAttribute="leadingMargin" id="U3i-Eg-dCw"/>
+                                        <constraint firstItem="UT5-V1-XQX" firstAttribute="leading" secondItem="khf-dN-0iS" secondAttribute="trailing" constant="4" id="WX6-3h-h5d"/>
+                                        <constraint firstItem="khf-dN-0iS" firstAttribute="top" secondItem="FF8-56-z7L" secondAttribute="topMargin" id="a7s-7R-EDl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UT5-V1-XQX" secondAttribute="trailing" id="aKw-Ww-jSb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="UT5-V1-XQX" secondAttribute="bottom" id="tta-xy-uOq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="UT5-V1-XQX" id="CfW-ir-o04"/>
+                                    <outlet property="nameLabel" destination="khf-dN-0iS" id="J8l-ag-74A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -17,6 +17,7 @@
 		8AA45178237CE81400C8903B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA45176237CE81400C8903B /* Main.storyboard */; };
 		8AA4517A237CE81600C8903B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AA45179237CE81600C8903B /* Assets.xcassets */; };
 		8AA4517D237CE81600C8903B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA4517B237CE81600C8903B /* LaunchScreen.storyboard */; };
+		8AA680692388E7D300017998 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA680682388E7D300017998 /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8AA45179237CE81600C8903B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AA4517C237CE81600C8903B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AA4517E237CE81600C8903B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AA680682388E7D300017998 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		8DF59CA6E00BD2686EDAF41E /* Pods_codepath_instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codepath_instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3EA797237D48C200286742 /* FeedTableViewCell.swift */,
+				8AA680682388E7D300017998 /* CommentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				8A3EA798237D48C200286742 /* FeedTableViewCell.swift in Sources */,
 				8A3EA796237D352900286742 /* CameraViewController.swift in Sources */,
 				8AA45171237CE81400C8903B /* AppDelegate.swift in Sources */,
+				8AA680692388E7D300017998 /* CommentTableViewCell.swift in Sources */,
 				8AA45173237CE81400C8903B /* SceneDelegate.swift in Sources */,
 				8A3EA794237D349200286742 /* FeedTableViewController.swift in Sources */,
 			);
