@@ -9,10 +9,21 @@
 import UIKit
 import Parse
 import Alamofire
+import MessageInputBar
 
-class FeedTableViewController: UITableViewController {
+class FeedTableViewController: UITableViewController, MessageInputBarDelegate {
     
     var posts = [PFObject]()
+    let commentBar = MessageInputBar()
+    var isCommentBarVisible = false
+    
+    override var inputAccessoryView: UIView? {
+        return commentBar
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return isCommentBarVisible
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +34,17 @@ class FeedTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         DataRequest.addAcceptableImageContentTypes(["application/octet-stream"])
+        tableView.keyboardDismissMode = .interactive
+        
+        commentBar.inputTextView.placeholder = "Add a comment..."
+        commentBar.sendButton.title = "Post"
+        commentBar.delegate = self
+        
+        let note_center = NotificationCenter.default
+        note_center.addObserver(self,
+                                selector: #selector(keyboardWillBeHidden(note:)),
+                                name: UIResponder.keyboardWillHideNotification,
+                                object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,6 +65,12 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
+    @objc func keyboardWillBeHidden(note: Notification) {
+        commentBar.inputTextView.text = nil
+        isCommentBarVisible = false
+        becomeFirstResponder()
+    }
+    
     // MARK: - Feed Actions
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
@@ -50,6 +78,17 @@ class FeedTableViewController: UITableViewController {
         let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
         let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
         delegate.window?.rootViewController = loginViewController
+    }
+    
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        // Create the comment
+        
+        
+        // Clear and dismiss the input bar
+        commentBar.inputTextView.text = nil
+        isCommentBarVisible = false
+        becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
     }
     
     // MARK: - Table view data source
@@ -63,7 +102,7 @@ class FeedTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         let activePost = posts[section]
         let comments = (activePost["comments"] as? [PFObject]) ?? []
-        return comments.count + 1
+        return comments.count + 2
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,13 +121,27 @@ class FeedTableViewController: UITableViewController {
             cell.captionLabel.text = (activePost["caption"] as! String)
             cell.photoView.af_setImage(withURL: imageUrl)
             return cell
-        } else {
+        } else if (indexPath.row <= comments.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell") as! CommentTableViewCell
             let activeComment = comments[indexPath.row - 1]
             let user = activeComment["author"] as! PFUser
             cell.nameLabel.text = user.username
             cell.commentLabel.text = (activeComment["text"] as! String)
             return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentTableViewCell")!
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let activePost = posts[indexPath.section]
+        let comments = (activePost["comments"] as? [PFObject]) ?? []
+        
+        if (indexPath.row == comments.count + 1) {
+            isCommentBarVisible = true
+            becomeFirstResponder()
+            commentBar.inputTextView.becomeFirstResponder()
         }
     }
 
